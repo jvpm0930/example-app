@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenController;
+use App\Http\Controllers\PagesController;
+use Symfony\Component\Finder\Iterator\CustomFilterIterator;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,42 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/account/{name?}', function ($name = "404") {
-    if ($name == "404") {
-        return view("404");
-    } else {
-        return view("account");
-    }
-})->name("account-name");
-
-Route::get('/home', function () {
-    return view('home');
-})->name("home");
-
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name("aboutus");
-
-Route::get('/services', function () {
-    return view('services');
-})->name("services");
-
-Route::get('/contactus', function () {
-    return view('contactus');
-})->name("contactus");
-
-
-Route::name('dashboard.')->group(function () {
-    Route::get('/admin', function () {
-        return view("account");
-    })->name('admin');
-    Route::get('/user', function () {
-        return view("account");
-    })->name('user');
-});
+    return view('auth.login');
+})->name("auth.login");
 
 Route::name('services.')->group(function () {
     Route::get('/service1', function () {
@@ -62,3 +31,21 @@ Route::name('services.')->group(function () {
         return view("service3");
     })->name('service3');
 });
+
+Route::get('/login', [AuthenController::class, 'login'])->name('login');
+Route::get('/registration', [AuthenController::class, 'registration']);
+
+Route::controller(AuthenController::class)->group(function () {
+    Route::get('/registration', 'registration')->middleware('alreadyLoggedIn');
+    Route::post('/registration-user', 'registerUser')->name('register-user');
+    Route::get('/login', 'login')->middleware('alreadyLoggedIn');
+    Route::post('/login-user', 'loginUser')->name('login-user');
+    Route::get('/dashboard', 'dashboard')->middleware('isLoggedIn');
+    Route::get('/aboutus', 'aboutus')->middleware('isLoggedIn');
+    Route::get('/contactus', 'contactus')->middleware('isLoggedIn');
+    Route::get('/service1', 'service1')->middleware('isLoggedIn');
+    Route::get('/service2', 'service2')->middleware('isLoggedIn');
+    Route::get('/service3', 'service3')->middleware('isLoggedIn');
+    Route::get('/logout', 'logout');
+});
+

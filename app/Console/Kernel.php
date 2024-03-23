@@ -29,4 +29,8 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+    protected $routeMiddleware = [
+        'isLoggedIn' => \App\Http\Middleware\AuthCheck::class,
+        'alreadyLoggedIn' => \App\Http\Middleware\AlreadyLoggedIn::class,
+    ];
 }
