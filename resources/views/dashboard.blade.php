@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 @extends('nav')
 @section('content')
 <section>
@@ -11,7 +10,7 @@
       <p>Where every sip tells a story.</p>
     </div>
     <div class="floating" style="height:400px; width:400px;">
-      <img src="https://cdn.pixabay.com/photo/2016/06/24/10/46/drinks-1477040_1280.png" width="400" height="400" alt="" />
+      <img src="https://cdn.pixabay.com/photo/2016/06/24/10/46/drinks-1477040_1280.png" width="400" height="400" />
     </div>
   </div>
 </section>
@@ -22,19 +21,19 @@
     <div class="carousel-item">
       <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">First Product</text>
+        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">Espresso Blend</text>
       </svg>
     </div>
     <div class="carousel-item">
       <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">Second Product</text>
+        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">Cold Brew</text>
       </svg>
     </div>
     <div class="carousel-item active">
       <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">Third Product</text>
+        <rect width="100%" height="100%" fill="#3586ff"></rect><text x="50%" y="50%" fill="white" dy=".3em">Blueberry Muffin</text>
       </svg>
     </div>
   </div>

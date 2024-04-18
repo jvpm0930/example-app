@@ -171,7 +171,7 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control">
+                        <input placeholder="enter your email" type="email" name="email" class="form-control">
                         <span class="text-danger">
                             @error('email')
                             {{$message}}
@@ -180,7 +180,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control">
+                        <input placeholder="enter your password" type="password" name="password" class="form-control">
                         <span class="text-danger">
                             @error('password')
                             {{$message}}
